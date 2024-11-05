@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 
 # Create the main window
 root = tk.Tk()
@@ -16,6 +17,10 @@ close_button.pack(pady=70)
 # Add second label
 adwise = tk.Label(root, text="Hier kann experimentiert werden" )
 adwise.pack(padx=20)
+
+frame = ttk.Frame(root, padding="5 5 5 5", relief="raised", borderwidth=5)
+frame.pack(fill="both", expand=False)
+
 
 # Start the main event loop
 root.mainloop()
