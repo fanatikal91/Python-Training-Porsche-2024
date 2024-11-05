@@ -13,3 +13,5 @@ Wie können Benutzer am Projekt mitwirken?
 Wo erhalten Benutzer Hilfe zu deinem Projekt?
 
 Wer verwaltet das Projekt und trägt dazu bei?
+
+neuer text 05.11.2024
