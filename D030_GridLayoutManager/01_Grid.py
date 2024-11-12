@@ -15,22 +15,31 @@ entry = tk.Entry(root)
 entry.grid(row=0, column=1, padx=10, pady=10)
 
 # Treeview-Widget (Tabelle) erstellen und in Grid platzieren
-tree = ttk.Treeview(root, columns=("entry"), show="headings", height=8)
-tree.heading("entry", text="Eingabe")
-tree.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
+#tree = ttk.Treeview(root, columns=("entry"), show="headings", height=8)
+#tree.heading("entry", text="Eingabe")
+#tree.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 
 # Funktion zum Hinzufügen eines neuen Eintrags zur Tabelle
-def submit_entry():
+#def submit_entry():
     # Text aus dem Entry-Feld holen
-    entry_text = entry.get()
-    if entry_text:  # Überprüfen, ob das Entry-Feld nicht leer ist
-        tree.insert("", "end", values=(entry_text,))  # Zeile zur Tabelle hinzufügen
-        entry.delete(0, tk.END)  # Entry-Feld nach Einfügen leeren
+   # entry_text = entry.get()
+   # if entry_text:  # Überprüfen, ob das Entry-Feld nicht leer ist
+   #     tree.insert("", "end", values=(entry_text,))  # Zeile zur Tabelle hinzufügen
+   #     entry.delete(0, tk.END)  # Entry-Feld nach Einfügen leeren
+
+
+
+def label_entry():
+    label_text = entry.get()
+    label.config(text=label_text)
 
 # Create a button and place it in the second row, spanning two columns
-submit_button = tk.Button(root, text="Submit", command=submit_entry)
+submit_button = tk.Button(root, text="Submit", command=label_entry)
 submit_button.grid(row=1, column=0, columnspan=2, pady=20)
 
+# Create a label and place it in the first row, first column
+label = tk.Label(root, text="Hier soll mein Text erschienen ")
+label.grid(row=3, column=0, padx=10, pady=10)
 
 # Start the main event loop
 root.mainloop()
