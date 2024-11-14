@@ -1,7 +1,7 @@
 import requests
 
 def get_postman_echo():
-    url = "https://postman-echo.com/get?a=87&x=110"
+    url = "https://postman-echo.com/get?a=87&x=110&y=88"
     
     try:
         # Send GET request
