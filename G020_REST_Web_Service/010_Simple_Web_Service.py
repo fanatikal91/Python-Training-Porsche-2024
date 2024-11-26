@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -19,6 +19,18 @@ def get_user_by_id(user_id):
     else:
         # Return an error if the user ID is not found
         return jsonify({"error": "User ID not found"}), 404
+
+# Route to delete a user by ID
+@app.route('/api/users/<int:user_id>', methods=['DELETE'])
+def delete_user_by_id(user_id):
+    # Check if the user_id is within the valid range
+    if 0 <= user_id < len(users):
+        deleted_user = users.pop(user_id)
+        return jsonify({"message": "User deleted", "deleted_user": deleted_user}), 200
+    else:
+        # Return an error if the user ID is not found
+        return jsonify({"error": "User ID not found"}), 404
+
 
 # Run the application
 if __name__ == "__main__":
